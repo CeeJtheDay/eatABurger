@@ -1,10 +1,12 @@
 const express = require("express");
+
 require('dotenv').config;
 
 var PORT = process.env.PORT || 3000;
 
 var app = express();
 
+var db = require("./models");
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
@@ -20,8 +22,6 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 require("./routes/api-routes")(app);
-
-var db = require("./models");
 
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
