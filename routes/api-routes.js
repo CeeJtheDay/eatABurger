@@ -55,20 +55,18 @@ module.exports = function(app) {
   });
 
   // PUT route for updating todos. We can get the updated todo data from req.body
-  app.put("/api/burgers", (req, res) => {
+  app.put("/api/burgers/:id", (req, res) => {
 
     db.Burger.update({
-      title: req.body.text,
-      devoured: req.body.complete
+      devoured: req.body.eaten
     }, {
       where: {
         id: req.body.id
       }
-    }).then(dbBurger => {
+    }).then((dbBurger) =>{
       res.json(dbBurger);
-    })
-      .catch((err) => {
-        res.json(err);
-      });
+      console.log(dbBurger)
+    });
+      
   });
 };

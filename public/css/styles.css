@@ -1,0 +1,10 @@
+.container {
+    background-color: darkgrey;
+}
+
+#burgerImg {
+    height: 300px; 
+    width: 300px;
+    float: left;
+    background-color: darkgrey;
+}
