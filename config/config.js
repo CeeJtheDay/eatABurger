@@ -1,11 +1,9 @@
-
-module.exports =
-{
+module.exports = {
   "development": {
-    "username": process.env.MYSQL_USERNAME,
-    "password": process.env.MYSQL_PASSWORD,
-    "database": process.env.MYSQL_DB,
-    "host": process.env.MYSQL_HOST,
+    "username": "root",
+    "password": "root",
+    "database": "burgers_DB",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
   },
@@ -18,8 +16,7 @@ module.exports =
     "operatorsAliases": false
   },
   "production": {
-   "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql",
-    "operatorsAliases": false
-  }
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+   }
 }
