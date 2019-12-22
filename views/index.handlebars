@@ -2,7 +2,9 @@
 
   <div class="row justify-content-center">
 
-    <img class="col - 8 offset-2" src="/images/BurgerPic.jpg" id="burgerImg">
+    <img class="col - 4" src="/images/burger.jpg" id="burgerImg">
+
+  </div>
 
     <div class="row justify-content-center">
 
@@ -10,7 +12,6 @@
 
     </div>
 
-  </div>
 
   <div class="row justify-content-center">
 
@@ -18,7 +19,7 @@
 
       <div class="form-group">
 
-        <label for="newBurger">Hngry?</label>
+        <label for="newBurger">Hungry? What would you like?</label>
         <input type="text" id="newBurger" name="title">
 
       </div>
@@ -33,6 +34,7 @@
 
     <section id="menu" class="col-5 p-5">
 
+      <h2>Menu</h2>
       <ol>
         {{#each burgers}}
         {{#unless this.devoured}}
@@ -47,6 +49,7 @@
     </section>
     <section id="devoured" class="col-5 p-5 offset-1">
 
+      <h2>Devoured</h2>
       <ul>
         {{#each burgers}}
         {{#if this.devoured}}

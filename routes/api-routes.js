@@ -28,11 +28,8 @@ module.exports = function(app) {
   app.post("/api/burgers", (req, res) => {
     
     db.Burger.create({
-
-      title: req.body.text,
-      devoured: req.body.complete
-
-    }).then(dbBurger => {
+       title: req.body.title,
+    }).then((dbBurger) => {
       res.json(dbBurger);
     })
       .catch((err) => {
